@@ -2,6 +2,7 @@ import 'package:brasil_fields/brasil_fields.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:xlo_clone/components/error_box.dart';
 import 'package:xlo_clone/screens/singup/components/field_title.dart';
 import 'package:xlo_clone/stores/signup_store.dart';
 
@@ -32,6 +33,14 @@ class SingUpScreen extends StatelessWidget {
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
+                    Observer(builder: (_) {
+                      return Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 8),
+                        child: ErrorBox(
+                          message: signupStore.error,
+                        ),
+                      );
+                    }),
                     FieldTitle(
                       title: 'Apelido',
                       subtitle: 'Como aparecerá em seus anúncios.',
