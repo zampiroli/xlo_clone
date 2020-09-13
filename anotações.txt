@@ -1,0 +1,47 @@
+/*
+  //save
+  final category = ParseObject('Categories')
+    ..set<String>('Title', 'Meias')
+    ..set<int>('Position', 1);
+  final response = await category.save();
+  print(response.success);
+  */
+  /*
+  //update
+  final category = ParseObject('Categories')
+    ..objectId = 'LGSREkjfln'
+    ..set<int>('Position', 666);
+  final response = await category.save();
+  print(response.success);
+  */
+  /*
+  //deleat
+  final category = ParseObject('Categories')..objectId = 'LGSREkjfln';
+  category.delete();
+  */
+  /*
+  //select por id
+  final response = await ParseObject('Categories').getObject('OHQT5UpzoT');
+  if (response.success) {
+    print(response.result);
+  }
+  */
+  /*
+  //select * from Categories
+  final response = await ParseObject('Categories').getAll();
+  if (response.success) {
+    for (final object in response.result) {
+      print(object);
+    }
+  }
+  */
+  /*
+  final query = QueryBuilder(ParseObject('Categories'));
+
+  query.whereContains('Title', 'Blusas');
+  query.whereEqualTo('Position', 2);
+  final response = await query.query();
+  if(response.success){
+    print(response.result);
+  }
+  */
