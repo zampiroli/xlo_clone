@@ -3,6 +3,7 @@ import 'package:get_it/get_it.dart';
 import 'package:xlo_clone/engine/parse/InitializeParse.dart';
 import 'package:xlo_clone/screens/base/base_screen.dart';
 import 'package:xlo_clone/stores/page_store.dart';
+import 'package:xlo_clone/stores/user_manager_store.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -13,6 +14,7 @@ void main() async {
 
 void setupLocators() {
   GetIt.I.registerSingleton(PageStore());
+  GetIt.I.registerSingleton(UserManagerStore());
 }
 
 class MyApp extends StatelessWidget {
