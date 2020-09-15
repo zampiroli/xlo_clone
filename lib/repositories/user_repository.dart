@@ -52,4 +52,9 @@ class UserRepository {
     }
     return null;
   }
+
+  Future<void> userLogout() async {
+    final parseUser = await ParseUser.currentUser();
+    return await parseUser.logout();
+  }
 }

@@ -22,4 +22,8 @@ abstract class _UserManagerStoreBase with Store {
     final user = await UserRepository().currentUser();
     setUser(user);
   }
+
+  Future<void> logoutUser() async {
+    final response = await UserRepository().userLogout();
+  }
 }

@@ -35,32 +35,33 @@ class CustomDrawerHeader extends StatelessWidget {
               width: 20,
             ),
             Expanded(
-                child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  userManagerStore.isLogedIn
-                      ? userManagerStore.user.name
-                      : 'Acesse sua conta agora!',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 16,
-                    fontWeight: FontWeight.w500,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    userManagerStore.isLogedIn
+                        ? userManagerStore.user.name
+                        : 'Acesse sua conta agora!',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w500,
+                    ),
                   ),
-                ),
-                Text(
-                  userManagerStore.isLogedIn
-                      ? userManagerStore.user.email
-                      : 'Clique aqui',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 14,
-                    fontWeight: FontWeight.w400,
+                  Text(
+                    userManagerStore.isLogedIn
+                        ? userManagerStore.user.email
+                        : 'Clique aqui',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 14,
+                      fontWeight: FontWeight.w400,
+                    ),
                   ),
-                ),
-              ],
-            ))
+                ],
+              ),
+            )
           ],
         ),
       ),

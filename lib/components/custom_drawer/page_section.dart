@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 import 'package:xlo_clone/components/custom_drawer/page_tile.dart';
 import 'package:xlo_clone/stores/page_store.dart';
+import 'package:xlo_clone/stores/user_manager_store.dart';
 
 class PageSection extends StatelessWidget {
   final PageStore pageStore = GetIt.I<PageStore>();
+  final UserManagerStore userManagerStore = GetIt.I<UserManagerStore>();
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -49,6 +51,16 @@ class PageSection extends StatelessWidget {
           },
           highlighted: pageStore.page == 4,
         ),
+        userManagerStore.isLogedIn
+            ? PageTile(
+                label: 'Realizar logout',
+                iconData: Icons.logout,
+                onTap: () {
+                  print('logout');
+                },
+                highlighted: pageStore.page == 5,
+              )
+            : Container(),
       ],
     );
   }
